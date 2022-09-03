@@ -40,7 +40,7 @@ const Section2Container = styled.div`
     width: 60%;
     position: absolute;
     right: 30px;
-    top: 210px;
+    top: 260px;
     border: 4px solid #eee;
     border-radius: 5px;
   }
@@ -49,7 +49,7 @@ const Section2Container = styled.div`
     align-items: center;
     justify-content: center;
     width: 90%;
-    margin-top: 380px;
+    margin-top: 290px;
     margin-bottom: 50px;
     margin-left: 5%;
   }

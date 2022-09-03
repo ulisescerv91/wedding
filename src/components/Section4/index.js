@@ -12,7 +12,7 @@ export function Section4() {
       </div>
 
       <div className="family">
-        <span>En compañía de nuestros queridos padres</span>
+        <span className="title">En compañía de nuestros queridos padres</span>
         <div>
           <div className="padres">
             <span>CYNTHIA TERESA FERRER ARREOLA</span>
@@ -36,6 +36,7 @@ const Section4Container = styled.div`
   justify-content: center;
   margin-top: 50px;
   .group_img {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,5 +58,16 @@ const Section4Container = styled.div`
   .family {
     text-transform: uppercase;
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    .title {
+      font-size: 26px;
+      text-align: center;
+    }
+    div {
+      .padres {
+        font-size: 16px;
+      }
+    }
   }
 `;
