@@ -1,0 +1,82 @@
+import React, { useEffect } from "react";
+import styled from "styled-components";
+
+export function Contador() {
+  const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
+
+  let countDown = new Date("Nov 12, 2022 15:00:00").getTime();
+
+  useEffect(() => {
+    const interval = setInterval(function () {
+      let now = new Date().getTime();
+      let distance = countDown - now;
+
+      document.getElementById("dias").innerText = Math.floor(distance / day);
+      document.getElementById("horas").innerText = Math.floor(
+        (distance % day) / hour
+      );
+      document.getElementById("minutos").innerText = Math.floor(
+        (distance % hour) / minute
+      );
+      document.getElementById("segundos").innerText = Math.floor(
+        (distance % minute) / second
+      );
+    }, second);
+    return () => clearInterval(interval);
+  });
+
+  return (
+    <Container>
+      <span className="faltan">Faltan</span>
+      <div className="time">
+        <div id="dias"></div>
+        <span>Dias</span>
+      </div>
+      <div className="time">
+        <div id="horas"></div>
+
+        <span>Horas</span>
+      </div>
+      <div className="time">
+        <div id="minutos"></div>
+        <span>Minutos</span>
+      </div>
+      <div className="time">
+        <div id="segundos"></div>
+        <span>Segundos</span>
+      </div>
+    </Container>
+  );
+}
+
+const Container = styled.div`
+  margin-top: 500px;
+  display: flex;
+  border: 1px solid #ccb186;
+  border-style: double;
+  justify-content: space-around;
+  padding: 30px 0px;
+  position: relative;
+  .faltan {
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%);
+    background-color: #fff;
+    display: block;
+    padding: 0px 20px;
+    font-size: 16px;
+  }
+  .time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 40px;
+    span {
+      font-size: 16px;
+    }
+  }
+`;
