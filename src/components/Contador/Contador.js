@@ -53,22 +53,32 @@ export function Contador() {
 }
 
 const Container = styled.div`
-  margin-top: 500px;
   display: flex;
   border: 1px solid #ccb186;
   border-style: double;
   justify-content: space-around;
   padding: 30px 0px;
   position: relative;
+  width: 100%;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 2;
+    top: 2px;
+    height: calc(100% - 5px);
+    width: calc(100% - 5px);
+    border: 1px solid #ccb186;
+  }
   .faltan {
     position: absolute;
     left: 50%;
-    top: -10px;
+    top: -14px;
     transform: translateX(-50%);
     background-color: #fff;
     display: block;
-    padding: 0px 20px;
-    font-size: 16px;
+    padding: 0px 15px;
+    font-size: 24px;
+    z-index: 1;
   }
   .time {
     display: flex;

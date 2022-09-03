@@ -9,13 +9,14 @@ export function Section1() {
         <div className="img_container">
           <div className="elements">
             <p className="names">cynthia + donato</p>
+
             <img src={img1} alt="Cynthia + Donato" />
             <div className="weeding_date">
               <p className="phrase">save our date</p>
               <div className="date">
-                <span>sabado</span>
+                <span>sabado |</span>
                 <span className="day">12</span>
-                <span> 15:00 pm</span>
+                <span>| 15:00 pm</span>
               </div>
               <p> - noviembre -</p>
               <p>AÑO DOS MIL VEINTIDOS </p>
@@ -28,8 +29,6 @@ export function Section1() {
 }
 
 const Section1Container = styled.div`
-  height: 100vh;
-
   .border {
     padding: 50px;
 
@@ -39,10 +38,9 @@ const Section1Container = styled.div`
 
     .img_container {
       background-color: #d9cab4;
-      height: 100vh;
-      padding: 50px 30px;
+      min-height: 80vh;
+      padding: 100px 15px;
       display: flex;
-      align-items: center;
       justify-content: center;
       .elements {
         position: relative;
@@ -50,22 +48,35 @@ const Section1Container = styled.div`
         .names {
           position: absolute;
           background-color: #fffdfa;
-          padding: 5px 10px;
+          padding: 0px 15px;
           left: 50%;
-          top: -20px;
+          top: -30px;
           transform: translateX(-50%);
+          width: 400px;
+          font-size: 40px;
+          z-index: 1;
         }
 
         .weeding_date {
+          margin-top: -50px;
           font-size: 30px;
-          position: absolute;
-          padding: 5px 10px;
-          left: 50%;
-          bottom: -20px;
-          transform: translateX(-50%);
           text-align: center;
           color: #fffdfa;
-          width: 100%;
+          display: block;
+
+          .phrase {
+            font-size: 35px;
+          }
+          .date {
+            font-size: 35px;
+            .day {
+              font-size: 65px;
+              margin: 0 10px;
+            }
+          }
+          p {
+            font-size: 18px;
+          }
         }
       }
     }

@@ -16,7 +16,9 @@ export function Section2() {
         </div>
       </div>
       <img src={ring} className="imgAnillo" alt="anillo de bodas" />
-      <Contador />
+      <div className="contador_container">
+        <Contador />
+      </div>
     </Section2Container>
   );
 }
@@ -28,6 +30,9 @@ const Section2Container = styled.div`
       background-image: url(${bgImg});
       padding: 60px 40px;
       text-align: justify;
+      font-size: 16px;
+      letter-spacing: 1px;
+      line-height: 1.2;
       color: white;
     }
   }
@@ -35,8 +40,17 @@ const Section2Container = styled.div`
     width: 60%;
     position: absolute;
     right: 30px;
-    top: 190px;
+    top: 210px;
     border: 4px solid #eee;
     border-radius: 5px;
+  }
+  .contador_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-top: 380px;
+    margin-bottom: 50px;
+    margin-left: 5%;
   }
 `;
